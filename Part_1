@@ -1,0 +1,62 @@
+# #Getting started
+
+# """
+# Please write a program which prints out an emoticon: :-)
+# """
+
+# print(':-)')
+
+# """"
+# Seitsemän veljestä" is one of the first novels ever written in Finnish. It is the story of seven orphaned brothers learning to make their way in the world (read more on Wikipedia).
+# This program is supposed to print out the names of the brothers in alphabetical order, but it's not working quite right yet. Please fix the program so that the names are printed in the correct order.
+# print("Simeoni")
+# print("Juhani")
+# print("Eero")
+# print("Lauri")
+# print("Aapo")
+# print("Tuomas")
+# print("Timo")
+# """
+# # Fix the code
+# seven_brothers = ["Simeoni", "Juhani","Eero", "Lauri","Aapo", "Tuomas", "Timo" ]
+# seven_brothers.sort()
+
+# for name in seven_brothers:
+#     print(name)
+
+# """
+# Please write a program which prints out the following lines 
+# exactly as they are written here, punctuation and all:
+
+# Row, row, row your boat,
+# Gently down the stream.
+# Merrily, merrily, merrily, merrily,
+# Life is but a dream.
+# """    
+
+# print("Row, row, row your boat,\nGently down the stream.\nMerrily, merrily, merrily, merrily,\nLife is but a dream.")
+
+# """
+# Please write a program which prints out the number of minutes in a year. Use Python code to perform the calculation, as in the previous code example.
+# """
+# print("Minutes in a year")
+# print(365*24*60)
+
+# """
+# Please write a program which prints out the following:
+# """
+# print('print("Hello there!")')
+
+
+# #Information from the user
+
+# """
+# Please write a program which asks for the user's name and then prints it twice, on two consecutive lines.
+# An example of the how the program should function:
+
+# What is your name? Paul
+# Paul
+# Paul
+# """
+# name = input('what is your name?')
+# print(name,name, sep = "\n")

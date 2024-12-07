@@ -1,0 +1,342 @@
+# # # # Simple Loops
+
+# # """"
+# # Let's create a program along the lines of the example above. 
+# # This program should print out the message "hi" and then ask "Shall we continue?" 
+# # until the user inputs "no". Then the program should 
+# # print out "okay then" and finish. Please have a look at the example below.
+# # """
+
+# # while True:
+# #     print("hi")
+# #     message = input("Shall we continue? ")
+# #     if message == "no":
+# #         break
+
+# # print("okay then")   
+
+
+# # """"
+# # Please write a program which asks the user for integer numbers. 
+# # If the number is below zero, the program should print out the message "Invalid number". 
+# # If the number is above zero, the program should print out the square root of the number using the Python sqrt function. In either case, the program should then ask for another number. If the user inputs the number zero, the program should stop asking for numbers and exit the loop. Below you'll find a reminder of how the sqrt function is used. 
+# # # Remember to import it in the beginning of the program.
+# # """
+
+# # import math
+# # while True:
+# #     num = int(input("Please type in a number: "))
+
+# #     if num == 0:
+# #         break
+# #     elif num < 0:
+# #         print("Invalid number")
+# #     else:
+# #         print(f"{math.sqrt(num)}")
+
+# # print("Exiting...")
+
+
+# """
+# This program should print out a countdown. The code is as follows:
+
+# number = 5
+# print("Countdown!")
+# while True:
+#   print(number)
+#   number = number - 1
+#   if number > 0:
+#     break
+
+# print("Now!")
+
+# This should print out
+
+# Countdown!
+# 5
+# 4
+# 3
+# 2
+# 1
+# Now!
+
+# However, the program doesn't quite work. Please fix it.
+
+# """
+# # number = 5
+# # print("Countdown!") 
+
+# # while True:
+# #   print(number)
+# #   number = number - 1
+# #   if number == 0:
+# #     break
+
+# # print("Now!")
+
+
+# """
+# Please write a program which asks the user for a password. 
+# The program should then ask the user to type in the password again. 
+# If the user types in something else than the first password, 
+# the program should keep on asking until the user types the first password again correctly.
+# Have a look at the expected behaviour below:
+
+# Password: sekred
+# Repeat password: secret
+# They do not match!
+# Repeat password: cantremember
+# They do not match!
+# Repeat password: sekred
+# User account created!
+# """
+# # pass_1 = input("Password: ")
+# # while True:
+    
+# #     pass_2 = input("Repeat password: ")
+
+# #     if pass_1 == pass_2:
+# #         break
+# #     else:
+# #         print("They do not match!")
+
+# # print("User account created!")   
+
+# """
+# Let's make the PIN checking example a bit more realistic. 
+# This version gives the user only three attempts at typing in a PIN.
+# The program uses two helper variables. 
+# The variable attempts keeps track of how many times the user has typed in a PIN. 
+# The variable success is set to either True or False 
+# based on whether the user is successful in signing in.
+
+# """
+# # attempts = 0
+
+# # while True:
+# #     code = input("Please type in your PIN: ")
+# #     attempts += 1
+
+# #     if code == "1234":
+# #         success = True
+# #         break
+
+# #     if attempts == 3:
+# #         success = False
+# #         break
+
+# #     # this is printed if the code was incorrect AND there have been less than three attempts
+# #     print("Incorrect...try again")
+
+# # if success:
+# #     print("Correct PIN entered!")
+# # else:
+# #     print("Too many attempts...")
+
+# ## Debugging print statements in loops
+
+# # attempts = 0
+
+# # while True:
+# #     print("beginning of the while block:")
+# #     code = input('Please type in your PIN: ')
+# #     attempts += 1
+
+# #     print('attempts: ', attempts)
+# #     print('condition: ', attempts == 3)
+# #     if attempts == 3:
+# #         success = False
+# #         break
+
+# #     print("code:", code)
+# #     print("condition2:", code == "1234")
+# #     if code == "1234":
+# #         success = True
+# #         break
+
+# #     print("Incorrect...try again")
+
+# """
+# Please write a program which keeps asking the user for a PIN code 
+# until they type in the correct one, which is 4321. 
+# The program should then print out the number of times the user tried different codes.
+# PIN: 3245
+# Wrong
+# PIN: 1234
+# Wrong
+# PIN: 0000
+# Wrong
+# PIN: 4321
+# Correct! It took you 4 attempts
+
+# If the user gets it right on the first try, 
+# the program should print out something a bit different:
+
+# PIN: 4321
+# Correct! It only took you one single attempt!
+
+# """
+
+# # attempt_count = 0
+
+# # while True:
+# #     pin = int(input("PIN: "))
+# #     attempt_count += 1
+          
+# #     if pin == 4321:
+# #         success = True
+# #         break
+# #     else:
+# #         print('Wrong')
+
+# # if success and attempt_count > 1:
+# #     print(f"Correct! It took you {attempt_count} attempts")
+# # if success and attempt_count == 1:
+# #     print(f"Correct! It only took you one single attempt!")
+
+# """
+# Please write a program which asks the user for a year, and prints out the next leap year.
+
+# Sample output
+# Year: 2023
+# The next leap year after 2023 is 2024
+
+# If the user inputs a year which is a leap year (such as 2024), the program should print out the following leap year:
+
+# Sample output
+# Year: 2024
+# The next leap year after 2024 is 2028
+
+# """
+
+# # Pseudocode:
+# # Here’s a simple way to think of it in steps:
+
+# # Check if the year is divisible by 4.
+# # If no, it is not a leap year.
+# # If yes, check if it is divisible by 100.
+# # If no, it is a leap year.
+# # If yes, check if it is divisible by 400.
+# # If yes, it is a leap year.
+# # If no, it is not a leap year. 
+
+# # year = int(input("Year:"))
+# # year_plus = year +  1
+
+# # while True:
+# #     if year_plus % 4 == 0:
+# #         if year_plus % 100 == 0:
+# #             if year_plus % 400 == 0:
+# #              break # leap year found
+# #         else:
+# #            break # divisible by 4 but not 100
+# #     year_plus += 1
+
+# # print(f"The next leap year after {year} is {year_plus}")
+
+                 
+# # """
+# # Part 1
+# # Please write a program which keeps asking the user for words. 
+# # If the user types in end, the program should print out the story the words formed, and finish.
+# # """
+# # word = ""
+# # previous_word = ""
+
+# # while True:
+# #     new_word = input("Please type in a word: ")
+
+# #     if new_word == "end":
+# #         break
+    
+# #     if new_word == previous_word:
+# #         break
+    
+# #     else:       
+# #         word += new_word + " "
+
+# #     previous_word = new_word        
+
+# # print(word)
+
+
+# """
+
+# Pre-task
+# Please write a program which asks the user for integer numbers. The program should keep asking for numbers until the user types in zero.
+
+# Sample output
+# Please type in integer numbers. Type in 0 to finish.
+# Number: 5
+# Number: 22
+# Number: 9
+# Number: -2
+# Number: 0
+
+# Part 1: Count
+# After reading in the numbers the program should print out how many numbers were typed in. The zero at the end should not be included in the count.
+
+# You will need a new variable here to keep track of the numbers typed in.
+
+# Sample output
+# ... the program asks for numbers
+# Numbers typed in 4
+
+# Part 2: Sum
+# The program should also print out the sum of all the numbers typed in. The zero at the end should not be included in the calculation.
+
+# The program should now print out the following:
+
+# Sample output
+# ... the program asks for numbers
+# Numbers typed in 4
+# The sum of the numbers is 34
+
+# Part 3: Mean
+# The program should also print out the mean of the numbers. The zero at the end should not be included in the calculation. You may assume the user will always type in at least one valid non-zero number.
+
+# Sample output
+# ... the program asks for numbers
+# Numbers typed in 4
+# The sum of the numbers is 34
+# The mean of the numbers is 8.5
+
+# Part 4: Positives and negatives
+# The program should also print out statistics on how many of the numbers were positive and how many were negative. The zero at the end should not be included in the calculation.
+
+# Sample output
+# ... the program asks for numbers
+# Numbers typed in 4
+# The sum of the numbers is 34
+# The mean of the numbers is 8.5
+# Positive numbers 3
+# Negative numbers 1
+
+# """   
+# # ask = print("Please type in integer numbers. Type in 0 to finish. ")
+# # count = 0
+# # sum = 0
+# # mean = 0
+# # pos_count = 0
+# # neg_count = 0
+
+# # while True:
+# #     num = int(input("Number: "))
+# #     if num > 0:
+# #        pos_count += 1
+# #     if num < 0:
+# #        neg_count += 1   
+
+# #     if num == 0:
+# #         break
+# #     else:
+# #       count += 1
+# #       sum += num
+# #       mean = sum / count
+# # print("... the program asks for numbers")      
+# # print(f"Numbers typed in {count}")
+# # print(f"The sum of the numbers is {sum}")
+# # print(f"The mean of the numbers is {mean}")   
+# # print(f"Positive numbers {pos_count}")
+# # print(f"Negative numbers {neg_count}")
+
